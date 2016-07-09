@@ -44,7 +44,7 @@ RCT_EXPORT_METHOD(setSwipeHasTimeout: (BOOL)enabled)
   }
 }
 
-RCT_EXPORT_METHOD(beginEMVTransactionWithAmount: (NSDecimalNumber*)amount chargeDictionary:(NSDictionary *)chargeDictionary)
+RCT_EXPORT_METHOD(beginEMVTransactionWithAmount: (nonnull NSNumber*)amount chargeDictionary:(NSDictionary *)chargeDictionary)
 {
   if (self.reader) {
     [self.reader beginEMVTransactionWithAmount:amount

@@ -26,6 +26,14 @@ let CardFlight = {
     CardFlightManager.chargeSwipedCardWithParameters(parameters, cb);
   },
 
+  chargeDippedCard(cb) {
+    CardFlightManager.chargeDippedCard(cb);
+  },
+
+  uploadSignature(image, cb) {
+    CardFlightManager.uploadSignature(image, cb);
+  },
+
   destroy() {
     CardFlightManager.destroy();
   },
@@ -33,8 +41,17 @@ let CardFlight = {
   /**
    * Available events
    * ================
-   * - readerCardSuccess(card)
+   * - readerIsConnecting
+   * - readerConnected
+   * - readerConnectionFailed(error)
+   * - readerBatteryLow
+   * - readerCardSuccess({card})
    * - readerCardFailure(error)
+   * - emvCardDipped
+   * - emvCardResponse({card})
+   * - emvCardRemoved
+   * - emvError(error)
+   * - emvMessage({message})
    */
   on(event, cb) {
     return NativeAppEventEmitter.addListener(event, cb);

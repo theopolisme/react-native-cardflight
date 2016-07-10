@@ -9,5 +9,6 @@
 
 @property (nonatomic) CFTCard *swipedCard;
 @property (nonatomic) CFTReader *reader;
+@property (atomic) RCTResponseSenderBlock emvChargeCallback;
 
 @end
